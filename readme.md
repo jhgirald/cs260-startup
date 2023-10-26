@@ -14,3 +14,23 @@ Bring to life your family’s history by exploring the food of those that came b
 
 ![image](https://github.com/jhgirald/cs260-startup/assets/63177251/34c130e1-85f3-4694-b46b-eeaf864d685f)
 ![image](https://github.com/jhgirald/cs260-startup/assets/63177251/bc81603a-7392-4d4f-b680-aad23b242731)
+
+
+## Technologies
+### 1. HTML
+It structures the content on the service, defining elements like headings, paragraphs, links, images, and more.
+
+### 2. CSS (Cascading Style Sheets)
+CSS will be used for styling the web pages, controlling the layout, and enhancing the visual presentation of HTML elements.
+
+### 3. JavaScript
+JavaScript is a programming language that adds interactivity to web pages. It runs in the browser and allows dynamic content updates, user interactions, and asynchronous communication. It will be used to control valid data and frontend logic.
+
+### 4. Backend
+The backend involves server-side scripting, handling databases, and managing application logic. This load from the database, do validation on login.
+
+### 5. Database
+The database will store and manage data for the web application such as group information and recipies.
+
+### 6. WebSocket
+WebSockets provide a bidirectional communication channel between the client and server over a single, long-lived connection. This will serve the chat option on the application.
