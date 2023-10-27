@@ -18,7 +18,8 @@ Bring to life your family’s history by exploring the food of those that came b
 
 ## Technologies
 ### 1. HTML
-It structures the content on the service, defining elements like headings, paragraphs, links, images, and more.
+It structures the content on the service, defining elements like headings, paragraphs, links, images, and more.<br>
+I added, in the html startup assignment, the basic skeleton for the service. All pages that will need to be accessed are there (a landing page, login/create account, main page, chats, groups, profile, and notifications).
 
 ### 2. CSS (Cascading Style Sheets)
 CSS will be used for styling the web pages, controlling the layout, and enhancing the visual presentation of HTML elements.
