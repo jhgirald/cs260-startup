@@ -66,16 +66,51 @@
           </nav>
           <!-- Navbar -->
     <main>
-        <div>
-            <h2>Profile</h2>
-            <img src="placeholder0.jpg" alt="Image 0">
-            <button>Update image</button>
-            <br>
-            <button>Edit name</button>
-            <br>
-            <button>Edit groups</button>
-            <br>
-            <button>Log out</button>
+      <div class="container mt-5">
+        <div class="row justify-content-start">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Image Container -->
+                            <div class="col-md-6 mb-3 text-center">
+                                <img id="myImage" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="img-thumbnail rounded" alt="Current Image">
+                            </div>
+    
+                            <!-- Update Image Button -->
+                            <div class="col-md-6">
+                                <div class="d-grid gap-2">
+                                    <button id="updateImageButton" class="btn btn-primary" onclick="updateImage()">Update Image</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row justify-content-start">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                      <!-- Buttons Container -->
+                      <div class="d-grid gap-2 mb-2">
+                          <button class="btn btn-primary">Edit names</button>
+                      </div>
+  
+                      <div class="d-grid gap-2 mb-2">
+                          <button class="btn btn-primary">Edit groups</button>
+                      </div>
+  
+                      <div class="d-grid gap-2">
+                          <button class="btn btn-danger">Log out</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
         </div>
     </main>
 
