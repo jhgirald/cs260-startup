@@ -16,29 +16,47 @@
     />
 </head>
 <html>
-    <body>
-        <header>
-            <nav>
-                <h1>FamilyMade</h1>
-            </nav>
-        </header>
-        <div class="account-container">
-            <h2>Create account</h2>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <div class="container-fluid">
+            <a href="/main.html"><span class="navbar-brand mb-0 h1">FamilyMade</span></a>
+          </div>
+          </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    </header>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title text-center">Create account</h5>
+                      <form>
+                          <div class="mb-3">
+                              <label for="username" class="form-label">Username</label>
+                              <input type="text" class="form-control" id="username" name="username" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="password" class="form-label">Password</label>
+                              <input type="password" class="form-control" id="password" name="password" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="repassword" class="form-label">Type password again</label>
+                            <input type="password" class="form-control" id="repassword" name="repassword" required>
+                        </div>
+                          <a href="main.html"><button type="button" class="btn btn-primary">Create</button></a>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <label for="conf_password">Type password again:</label>
-            <input type="password" id="conf_password" name="conf_password" required>
-            <br>
-            <a href="/main.html">
-                <button type="button">Create Account</button>
-            </a>
-        </div>
-    </body>
+</body>
     <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-4 pb-0">

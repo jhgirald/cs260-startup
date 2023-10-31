@@ -18,9 +18,16 @@
 <html>
     <body>
         <header>
-            <nav>
-                <h1>FamilyMade</h1>
-            </nav>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+              <div class="container-fluid">
+                <a href="/main.html"><span class="navbar-brand mb-0 h1">FamilyMade</span></a>
+              </div>
+              </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
         </header>
         <div class="container mt-5">
           <div class="row justify-content-center">
@@ -37,7 +44,8 @@
                                   <label for="password" class="form-label">Password</label>
                                   <input type="password" class="form-control" id="password" name="password" required>
                               </div>
-                              <button type="submit" class="btn btn-primary">Login</button>
+                              <a href="main.html"><button type="button" class="btn btn-primary">Login</button></a>
+                              <a href="/createaccount.html"><button type="button" href="/createaccount.html" class="btn btn-primary">Create account</button></a>
                           </form>
                       </div>
                   </div>
