@@ -58,5 +58,8 @@ function addChatList(chatName, lastMessage, imageUrl) {
   `;
 
   newItem.innerHTML = innerContent;
+  newItem.onclick = function() {
+    window.location.href = "chat.html";
+  };
   myList.appendChild(newItem);
 }
