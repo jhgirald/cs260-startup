@@ -57,6 +57,16 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" crossorigin="anonymous"></script>
 <script>
+    // future websocket
+      // const chatBox = document.getElementById('chat-box');
+      // const messageInput = document.getElementById('message-input');
+      // const websocket = new WebSocket('');
+
+      // websocket.addEventListener('message', (event) => {
+      //   const message = JSON.parse(event.data);
+      //   displayMessage(message);
+      // });
+
     function sendMessage() {
       const messageInput = document.getElementById('message-input');
       const messagesList = document.getElementById('messages');
@@ -68,7 +78,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
         messageItem.classList.add("list-group-item");
         messagesList.appendChild(messageItem);
 
-
+        // Websocket connection
         // Clear the input field
         messageInput.value = '';
 
@@ -77,5 +87,6 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
       }
     }
   </script>
+  <script src="socketScript.js"></script>
 </body>
 </html>
