@@ -36,6 +36,7 @@
                       <div class="card-body">
                           <h5 class="card-title text-center">Login</h5>
                           <form>
+                            <p id="authText"></p>
                               <div class="mb-3">
                                   <label for="username" class="form-label">Username</label>
                                   <input type="text" class="form-control" id="username" name="username" required>
@@ -44,7 +45,7 @@
                                   <label for="password" class="form-label">Password</label>
                                   <input type="password" class="form-control" id="password" name="password" required>
                               </div>
-                              <a href="main.html"><button type="button" class="btn btn-primary">Login</button></a>
+                              <a><button onclick="logIn()" type="submit" class="btn btn-primary">Login</button></a>
                               <a href="/createaccount.html"><button type="button" href="/createaccount.html" class="btn btn-primary">Create account</button></a>
                           </form>
                       </div>
