@@ -63,3 +63,34 @@ function addChatList(chatName, lastMessage, imageUrl) {
   };
   myList.appendChild(newItem);
 }
+
+
+function getNotifications(){
+  //Connect to DB and get notifications for the user
+  //The following are just examples since there is no DB
+  const notifications = [
+      { name: 'Notification 1', msg: "ABC"},
+      { name: 'Notification 2', msg: "123" },
+      { name: 'Notification 3', msg: "XYZ" },
+    ];
+    notifications.forEach((notification) =>{
+      addNotificationList(notification.name, notification.msg);
+    });
+}
+function addNotificationList(notificationName, message) {
+  const myList = document.getElementById('notificationList');
+
+  const newItem = document.createElement('li');
+  newItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+  const innerContent = `
+    <div class="d-flex align-items-center">
+      <div class="ms-3">
+        <p class="fw-bold mb-1">${notificationName}</p>
+        <p class="text-muted mb-0">${message}</p>
+      </div>
+    </div>
+  `;
+
+  newItem.innerHTML = innerContent;
+  myList.appendChild(newItem);
+}
