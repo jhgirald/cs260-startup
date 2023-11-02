@@ -27,3 +27,36 @@ function addGroupList(groupName, imageUrl) {
     newItem.innerHTML = innerContent;
     myList.appendChild(newItem);
   }
+
+
+  function getChats(){
+    //Connect to DB and get chats for the user
+    //The following are just examples since there is no DB
+    const chats = [
+        { name: 'John Doe', msg: "ABC", img: "https://mdbootstrap.com/img/new/avatars/8.jpg" },
+        { name: 'Alex Ray', msg: "123", img: "https://mdbootstrap.com/img/new/avatars/6.jpg" },
+        { name: 'Kate Hunington', msg: "XYZ", img: "https://mdbootstrap.com/img/new/avatars/7.jpg" },
+      ];
+      chats.forEach((chats) =>{
+        addChatList(chats.name, chats.msg, chats.img);
+      });
+}
+
+function addChatList(chatName, lastMessage, imageUrl) {
+  const myList = document.getElementById('chatList');
+
+  const newItem = document.createElement('li');
+  newItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+  const innerContent = `
+    <div class="d-flex align-items-center">
+      <img src="${imageUrl}" alt="" style="width: 45px; height: 45px" class="rounded" />
+      <div class="ms-3">
+        <p class="fw-bold mb-1">${chatName}</p>
+        <p class="text-muted mb-0">${lastMessage}</p>
+      </div>
+    </div>
+  `;
+
+  newItem.innerHTML = innerContent;
+  myList.appendChild(newItem);
+}
