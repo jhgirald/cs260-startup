@@ -25,7 +25,8 @@ I added, in the html startup assignment, the basic skeleton for the service. All
 CSS will be used for styling the web pages, controlling the layout, and enhancing the visual presentation of HTML elements.
 
 ### 3. JavaScript
-JavaScript is a programming language that adds interactivity to web pages. It runs in the browser and allows dynamic content updates, user interactions, and asynchronous communication. It will be used to control valid data and frontend logic.
+JavaScript is a programming language that adds interactivity to web pages. It runs in the browser and allows dynamic content updates, user interactions, and asynchronous communication. It will be used to control valid data and frontend logic.<br>
+I have added several scripts to ensure log in, new account creation, backend database pull and fill data, and future websocket connections.
 
 ### 4. Backend
 The backend involves server-side scripting, handling databases, and managing application logic. This load from the database, do validation on login.
