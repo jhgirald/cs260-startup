@@ -1,8 +1,24 @@
-function logIn() {
+function setCookie(name, val) {
+  const url = `/cookie/${name}/${val}`;
+
+  fetch(url, {
+    method: 'POST',
+  })
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+async function logIn() {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
     // Get auth from backend
     //Login
+    setCookie("username", username.value);
+    await new Promise(r => setTimeout(r, 2000));
     window.location.href = `main.html`;//get auth token and info of the user and send it over
     //Otherwise
     // showLoginFailMessage();
