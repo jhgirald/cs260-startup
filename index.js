@@ -1,6 +1,14 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 
+// Third party middleware - Cookies
+app.use(cookieParser());
+
+app.post('/cookie/:name/:value', (req, res, next) => {
+    res.cookie(req.params.name, req.params.value);
+    res.send({cookie: `${req.params.name}:${req.params.value}`});
+  });
 // The service port defaults to 3000 or is read from the program arguments
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
@@ -20,6 +28,10 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+
