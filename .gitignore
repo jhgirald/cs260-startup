@@ -1,2 +1,3 @@
 deployFiles.sh
 test*
+node_modules
