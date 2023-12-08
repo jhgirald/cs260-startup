@@ -28,6 +28,10 @@ CSS will be used for styling the web pages, controlling the layout, and enhancin
 JavaScript is a programming language that adds interactivity to web pages. It runs in the browser and allows dynamic content updates, user interactions, and asynchronous communication. It will be used to control valid data and frontend logic.<br>
 I have added several scripts to ensure log in, new account creation, backend database pull and fill data, and future websocket connections.
 
+### 3.5 Services
+I added services and endpoints. Node and express are now running the services. Endpoints for backend data calls have been added. Third party call to get quotes have been added. Middleware creates a cookie with username.<br>
+To test the quote and the cookie: Log in (No backend yet so just use username, password does nothing) using any username you want to use. Click log in button and this should take you to main.html where a pop up with the username and a random quote will show up.
+
 ### 4. Backend
 The backend involves server-side scripting, handling databases, and managing application logic. This load from the database, do validation on login.
 
