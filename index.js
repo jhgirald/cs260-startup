@@ -28,8 +28,21 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+app.get('/user/:recipes/:username/:auth', (req, res) => {
+  res.send({ recipes: ''});
+});
 
+app.get('/user/:groups/:username/:auth', (req, res) => {
+  res.send({ groups: ''});
+});
 
+app.get('/user/:chats/:username/:auth', (req, res) => {
+  res.send({ chats: ''});
+});
+
+app.get('/user/:notifications/:username/:auth', (req, res) => {
+  res.send({ notifications: ''});
+});
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
