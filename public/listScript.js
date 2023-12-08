@@ -94,3 +94,17 @@ function addNotificationList(notificationName, message) {
   newItem.innerHTML = innerContent;
   myList.appendChild(newItem);
 }
+
+function getDataFromBackEnd(url){
+  //eventually will be called from chats, notification, and groups to get data from the backend
+  fetch(url, {
+    method: 'GET',
+  })
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
