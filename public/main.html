@@ -46,6 +46,8 @@
     <!-- Pop-up container -->
     <div class="popup-container" id="welcomePopup">
       <h2 id="welcome_text">Welcome!</h2>
+      <p id="welcome_quote"></p>
+      <p id="quote_author"></p>
       <button onclick="closePopup()">Close</button>
     </div>
   
@@ -204,26 +206,26 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        username = getCookie("username");
-        if(username != null){
-        document.getElementById('welcome_text').innerText = "Welcome " + username + "!";
-        }
-        else {
-          window.location.href = `login.html`
-        }
-        showPopup();
-      });
-    function showPopup() {
+    loadPopup()
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     username = getCookie("username");
+    //     if(username != null){
+    //     document.getElementById('welcome_text').innerText = "Welcome " + username + "!";
+    //     }
+    //     else {
+    //       window.location.href = `login.html`
+    //     }
+    //     showPopup();
+    //   });
+    // function showPopup() {
 
-      document.getElementById('welcomePopup').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-    function closePopup() {
-      document.getElementById('welcomePopup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    getCookie();
-
+    //   document.getElementById('welcomePopup').style.display = 'block';
+    //   document.getElementById('overlay').style.display = 'block';
+    // }
+    // function closePopup() {
+    //   document.getElementById('welcomePopup').style.display = 'none';
+    //   document.getElementById('overlay').style.display = 'none';
+    // }
+    quote();
   </script>
 </html>
