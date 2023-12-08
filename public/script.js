@@ -20,24 +20,14 @@ function getCookie(name) {
     return null;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  username = getCookie("username");
-  if(username != null){
-  document.getElementById('welcome_text').innerText = "Welcome " + username + "!";
-  }
-  else {
-    window.location.href = `login.html`
-  }
-  showPopup();
-});
 function showPopup() {
 
-document.getElementById('welcomePopup').style.display = 'block';
-document.getElementById('overlay').style.display = 'block';
+  document.getElementById('welcomePopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
 }
 function closePopup() {
-document.getElementById('welcomePopup').style.display = 'none';
-document.getElementById('overlay').style.display = 'none';
+  document.getElementById('welcomePopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
 }
 function loadPopup(){
   document.addEventListener('DOMContentLoaded', function() {
