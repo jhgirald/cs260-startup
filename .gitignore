@@ -2,4 +2,4 @@ deployFiles.sh
 test*
 node_modules
 .vscode
-dbConfig.js
+dbConfig.json
