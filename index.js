@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
 const DB = require('./database.js');
+const DB = require('./database.js');
 
 // Third party middleware - Cookies
 app.use(cookieParser());
@@ -79,5 +80,3 @@ app.get('/user/notifications/:notifications/:username/:auth', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-
