@@ -20,7 +20,7 @@ const groupsCollection = db.collection('groups');
 });
 
 async function addUser(user) {
-  const result = await userCollection.insertOne(user);
+  const result = await userCollection.insertOne(JSON.parse(user));
   return result;
 }
 async function addRecipe(recipe) {
