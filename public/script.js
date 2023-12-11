@@ -7,6 +7,9 @@ function setCookie(name, val) {
     .then((response) => response.json())
     .then((jsonResponse) => {
       console.log(jsonResponse);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 }
 function getCookie(name) {
@@ -63,5 +66,8 @@ function quote(){
     .then((data) => {
       document.getElementById('welcome_quote').innerText = data.content;
       document.getElementById('quote_author').innerText = data.author;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 }
