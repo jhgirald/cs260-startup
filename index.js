@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
-const DB = require('./database.js');
+
 const DB = require('./database.js');
 
 // Third party middleware - Cookies
