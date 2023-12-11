@@ -1,14 +1,31 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
+const DB = require('./database.js');
 
 // Third party middleware - Cookies
 app.use(cookieParser());
 
 app.post('/cookie/:name/:value', (req, res, next) => {
-    res.cookie(req.params.name, req.params.value);
-    res.send({cookie: `${req.params.name}:${req.params.value}`});
-  });
+  res.cookie(req.params.name, req.params.value);
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
+});
+
+app.post('/user/create/:username/:password', async (req, res) => {
+  const user = await getUser(username);
+  if (user.length > 0){
+    res.status(401).send({ error: 'Username already taken' });
+  }
+  else if (password.length < 5){
+    res.status(401).send({ error: 'password too short' });
+  }
+  else {
+    const newUser = { username, password };
+    addUser(newUser);
+    res.status(200).send({});
+  }
+
+});
 // The service port defaults to 3000 or is read from the program arguments
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
@@ -28,19 +45,34 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.get('/user/:recipes/:username/:auth', (req, res) => {
+app.get('/user/login/:username/:password', async (req, res) => {
+  const { username, password } = req.params;
+
+  const user = await getUser(username);
+
+  if (user && user.password === password) {
+    // Passwords match, generate a token
+    const token = "Auth"
+    res.send({ token: token });
+  } else {
+    // Incorrect username or password
+    res.status(401).send({ error: 'Invalid username or password' });
+  }
+});
+
+app.get('/user/recipe/:recipes/:username/:auth', (req, res) => {
   res.send({ recipes: ''});
 });
 
-app.get('/user/:groups/:username/:auth', (req, res) => {
+app.get('/user/group/:groups/:username/:auth', (req, res) => {
   res.send({ groups: ''});
 });
 
-app.get('/user/:chats/:username/:auth', (req, res) => {
+app.get('/user/chats/:chats/:username/:auth', (req, res) => {
   res.send({ chats: ''});
 });
 
-app.get('/user/:notifications/:username/:auth', (req, res) => {
+app.get('/user/notifications/:notifications/:username/:auth', (req, res) => {
   res.send({ notifications: ''});
 });
 app.listen(port, () => {
