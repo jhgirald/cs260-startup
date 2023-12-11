@@ -5,6 +5,7 @@ const DB = require('./database.js');
 
 // Third party middleware - Cookies
 app.use(cookieParser());
+// app.use(express.json());
 
 app.post('/cookie/:name/:value', (req, res, next) => {
   res.cookie(req.params.name, req.params.value);
@@ -12,16 +13,16 @@ app.post('/cookie/:name/:value', (req, res, next) => {
 });
 
 app.post('/user/create/:username/:password', async (req, res) => {
-  const user = await getUser(username);
+  const user = await DB.getUser(req.params.username);
   if (user.length > 0){
     res.status(401).send({ error: 'Username already taken' });
   }
-  else if (password.length < 5){
+  else if (req.params.password.length < 8){
     res.status(401).send({ error: 'password too short' });
   }
   else {
-    const newUser = { username, password };
-    addUser(newUser);
+    const newUser = { username:req.params.username, password:req.params.password };
+    await DB.addUser(JSON.stringify(newUser));
     res.status(200).send({});
   }
 
@@ -48,7 +49,7 @@ app.use((_req, res) => {
 app.get('/user/login/:username/:password', async (req, res) => {
   const { username, password } = req.params;
 
-  const user = await getUser(username);
+  const user = await DB.getUser(username);
 
   if (user && user.password === password) {
     // Passwords match, generate a token
