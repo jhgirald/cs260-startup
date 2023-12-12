@@ -33,10 +33,12 @@ I added services and endpoints. Node and express are now running the services. E
 To test the quote and the cookie: Log in (No backend yet so just use username, password does nothing) using any username you want to use. Click log in button and this should take you to main.html where a pop up with the username and a random quote will show up.
 
 ### 4. Backend
-The backend involves server-side scripting, handling databases, and managing application logic. This load from the database, do validation on login.
+The backend involves server-side scripting, handling databases, and managing application logic. This load from the database, do validation on login.<br>
+A database has been added. Creating accounts and logging in checks on database for authentification. Database now holds recipes. Users will soon be able to add their recipes. Currently recipes stored in the database are loaded to the website. <br>
+When logging in, it will do nothing if there was an error. I am going to change the functionality to be able to finish for the class. It will still contain the same things except for notifications and groups. Instead there will be see recipes and add recipes.
 
 ### 5. Database
-The database will store and manage data for the web application such as group information and recipies.
+The database will store and manage data for the web application such as group information and recipies. Database is up and running!
 
 ### 6. WebSocket
 WebSockets provide a bidirectional communication channel between the client and server over a single, long-lived connection. This will serve the chat option on the application.
