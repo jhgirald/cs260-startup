@@ -87,8 +87,6 @@ async function loadRLRecipes(){
     },})
     .then((response) => response.json())
     .then((data) => {
-      // document.getElementById('welcome_quote').innerText = data.content;
-      // document.getElementById('quote_author').innerText = data.author;
       userRecipes = data;
     })
     .catch((error) => {
