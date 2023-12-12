@@ -41,6 +41,13 @@ app.post('/user/login', async (req, res) => {
     res.status(401).send({ error: 'Invalid username or password' });
   }
 });
+
+app.post('/user/recipe', async (req, res) => {
+  const body = req.body;
+  const newRecipe = { username:req.body.username, name:req.body.name, ingredients:req.body.ingredients, instructions:req.body.instructions };
+  await DB.addRecipe(JSON.stringify(newRecipe));
+  res.send({ok:"ok"});
+});
 // The service port defaults to 3000 or is read from the program arguments
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 

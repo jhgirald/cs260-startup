@@ -24,7 +24,7 @@ async function addUser(user) {
   return result;
 }
 async function addRecipe(recipe) {
-  const result = await recipesCollection.insertOne(recipe);
+  const result = await recipesCollection.insertOne(JSON.parse(recipe));
   return result;
 }
 async function addChat(chat) {
