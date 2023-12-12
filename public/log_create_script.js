@@ -30,12 +30,45 @@ async function logIn() {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
     // Get auth from backend
+    let jsonRes;
     //Login
-    setCookie("username", username.value);
-    await new Promise(r => setTimeout(r, 2000));
-    window.location.href = `main.html`;//get auth token and info of the user and send it over
-    //Otherwise
-    // showLoginFailMessage();
+    const url = `/user/login`;
+    console.log(username.value);
+    console.log(password.value);
+    const data = {
+      username: username.value,
+      password: password.value,
+    }
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+    .then((response) => response.json())
+    .then((jsonResponse) => {
+      jsonRes = jsonResponse;
+      console.log(jsonResponse);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    })
+    ;
+
+    await new Promise(r => setTimeout(r, 10000));
+    console.log(jsonRes);
+    if(jsonRes["token"] == "Auth"){
+      console.log("YEAH BRUH");
+       setCookie("username", username.value);
+
+      await new Promise(r => setTimeout(r, 2000));
+      window.location.href = `main.html`;//get auth token and info of the user and send it over
+    }
+    else{
+      showLoginFailMessage();
+    }
+
 }
 function showLoginFailMessage() {
     const text = document.getElementById("authText");
