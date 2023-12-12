@@ -5,7 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('users');
-const recipesCollection = db.collection('recipes');
+const recipeCollection = db.collection('recipes');
 const chatsCollection = db.collection('chats');
 const notificationsCollection = db.collection('notifications');
 const groupsCollection = db.collection('groups');
@@ -52,7 +52,8 @@ async function getRecipes(){
   return cursor.toArray();
 };
 
-async function getRecipesByUser(recipeId, username) {
+async function getRecipesByUser(username) {
+
   const query = { username: username };
   const cursor = recipeCollection.find(query);
   return cursor.toArray();

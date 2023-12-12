@@ -56,7 +56,7 @@ async function logIn() {
     })
     ;
 
-    await new Promise(r => setTimeout(r, 10000));
+    await new Promise(r => setTimeout(r, 1000));
     console.log(jsonRes);
     if(jsonRes["token"] == "Auth"){
       console.log("YEAH BRUH");

@@ -79,10 +79,14 @@ app.get('/config', (_req, res) => {
   // }
 // });
 
-app.get('/user/recipe/:recipes/:username/:auth', (req, res) => {
-  res.send({ recipes: ''});
+app.get('/user/recipe/:username', async (req, res) => {
+  const userRecipes = await DB.getRecipesByUser(req.params.username);
+  res.send({ recipes: userRecipes});
 });
-
+app.get('/user/recipe/', async (req, res) => {
+  const recipes = await DB.getRecipes();
+  res.send({ recipes: recipes});
+});
 app.get('/user/group/:groups/:username/:auth', (req, res) => {
   res.send({ groups: ''});
 });

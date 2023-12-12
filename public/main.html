@@ -134,8 +134,8 @@
                       </div>
                       <div class="col-md-8">
                           <div class="card-body d-flex flex-column align-items-center">
-                              <h5 class="card-title">Food title</h5>
-                              <p class="card-text">
+                              <h5 class="card-title", id="leftRecipeTitle">Food title</h5>
+                              <p class="card-text", id="leftRecipeInstructions">
                                   This will show the description of the recipe.
                               </p>
                           </div>
@@ -156,8 +156,8 @@
                       </div>
                       <div class="col-md-8">
                           <div class="card-body d-flex flex-column align-items-center">
-                              <h5 class="card-title">Food title</h5>
-                              <p class="card-text">
+                              <h5 class="card-title", id="rightRecipeTitle">Food title</h5>
+                              <p class="card-text", id="rightRecipeInstructions">
                                   This will show the description of the recipe.
                               </p>
                           </div>
@@ -206,7 +206,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <script>
-    loadPopup()
+    loadPopup();
     // document.addEventListener('DOMContentLoaded', function() {
     //     username = getCookie("username");
     //     if(username != null){
@@ -227,5 +227,6 @@
     //   document.getElementById('overlay').style.display = 'none';
     // }
     quote();
+    loadRLRecipes();
   </script>
 </html>
