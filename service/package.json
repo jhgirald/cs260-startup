@@ -1,0 +1,19 @@
+{
+  "name": "cs260-startup",
+  "version": "1.0.0",
+  "description": "## Family is important! Family is important and so is food.<br> We all know family search as one of the best tools to bring families together.<br> Do you know what else brings family together? FOOD!<br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookhub": "^1.2.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "ws": "^8.15.1"
+  }
+}
