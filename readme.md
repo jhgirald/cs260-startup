@@ -41,4 +41,7 @@ When logging in, it will do nothing if there was an error. I am going to change 
 The database will store and manage data for the web application such as group information and recipies. Database is up and running!
 
 ### 6. WebSocket
-WebSockets provide a bidirectional communication channel between the client and server over a single, long-lived connection. This will serve the chat option on the application.
+WebSockets provide a bidirectional communication channel between the client and server over a single, long-lived connection. This will serve the chat option on the application.<br>
+
+### 7. REACT
+React and Vite have been implemented. The app works the same but for a few changes. I removed the popup since it is annoying, there are no more notifications tab or groups tab since it was not implemented. Chats are not per person (no time to finish that), Log out does not work but it was not part of the class minimum requirements. If you want to access a page you have to login or create an account (duplicating tabs is broken, link to a specific page doesn't work but navigating thru the app works). Minimum requirements are present.
